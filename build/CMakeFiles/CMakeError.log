@@ -1,0 +1,55 @@
+Determining if the pthread_create exist failed with the following output:
+Change Dir: /home/workspace/CppND-Route-Planning-Project/build/CMakeFiles/CMakeTmp
+
+Run Build Command:"/usr/bin/make" "cmTC_edebf/fast"
+/usr/bin/make -f CMakeFiles/cmTC_edebf.dir/build.make CMakeFiles/cmTC_edebf.dir/build
+make[1]: Entering directory '/home/workspace/CppND-Route-Planning-Project/build/CMakeFiles/CMakeTmp'
+Building C object CMakeFiles/cmTC_edebf.dir/CheckSymbolExists.c.o
+/usr/bin/cc    -o CMakeFiles/cmTC_edebf.dir/CheckSymbolExists.c.o   -c /home/workspace/CppND-Route-Planning-Project/build/CMakeFiles/CMakeTmp/CheckSymbolExists.c
+Linking C executable cmTC_edebf
+/usr/local/bin/cmake -E cmake_link_script CMakeFiles/cmTC_edebf.dir/link.txt --verbose=1
+/usr/bin/cc      -rdynamic CMakeFiles/cmTC_edebf.dir/CheckSymbolExists.c.o  -o cmTC_edebf 
+CMakeFiles/cmTC_edebf.dir/CheckSymbolExists.c.o: In function `main':
+CheckSymbolExists.c:(.text+0x16): undefined reference to `pthread_create'
+collect2: error: ld returned 1 exit status
+CMakeFiles/cmTC_edebf.dir/build.make:86: recipe for target 'cmTC_edebf' failed
+make[1]: *** [cmTC_edebf] Error 1
+make[1]: Leaving directory '/home/workspace/CppND-Route-Planning-Project/build/CMakeFiles/CMakeTmp'
+Makefile:121: recipe for target 'cmTC_edebf/fast' failed
+make: *** [cmTC_edebf/fast] Error 2
+
+File /home/workspace/CppND-Route-Planning-Project/build/CMakeFiles/CMakeTmp/CheckSymbolExists.c:
+/* */
+#include <pthread.h>
+
+int main(int argc, char** argv)
+{
+  (void)argv;
+#ifndef pthread_create
+  return ((int*)(&pthread_create))[argc];
+#else
+  (void)argc;
+  return 0;
+#endif
+}
+
+Determining if the function pthread_create exists in the pthreads failed with the following output:
+Change Dir: /home/workspace/CppND-Route-Planning-Project/build/CMakeFiles/CMakeTmp
+
+Run Build Command:"/usr/bin/make" "cmTC_97f80/fast"
+/usr/bin/make -f CMakeFiles/cmTC_97f80.dir/build.make CMakeFiles/cmTC_97f80.dir/build
+make[1]: Entering directory '/home/workspace/CppND-Route-Planning-Project/build/CMakeFiles/CMakeTmp'
+Building C object CMakeFiles/cmTC_97f80.dir/CheckFunctionExists.c.o
+/usr/bin/cc   -DCHECK_FUNCTION_EXISTS=pthread_create   -o CMakeFiles/cmTC_97f80.dir/CheckFunctionExists.c.o   -c /usr/local/share/cmake-3.13/Modules/CheckFunctionExists.c
+Linking C executable cmTC_97f80
+/usr/local/bin/cmake -E cmake_link_script CMakeFiles/cmTC_97f80.dir/link.txt --verbose=1
+/usr/bin/cc  -DCHECK_FUNCTION_EXISTS=pthread_create    -rdynamic CMakeFiles/cmTC_97f80.dir/CheckFunctionExists.c.o  -o cmTC_97f80 -lpthreads 
+/usr/bin/ld: cannot find -lpthreads
+collect2: error: ld returned 1 exit status
+CMakeFiles/cmTC_97f80.dir/build.make:86: recipe for target 'cmTC_97f80' failed
+make[1]: *** [cmTC_97f80] Error 1
+make[1]: Leaving directory '/home/workspace/CppND-Route-Planning-Project/build/CMakeFiles/CMakeTmp'
+Makefile:121: recipe for target 'cmTC_97f80/fast' failed
+make: *** [cmTC_97f80/fast] Error 2
+
+
